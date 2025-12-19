@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+ul {
+  padding: 1.25rem;
+  list-style-position: outside;
+}

@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+---
 const projects = [
   {
     href: "/projects/vibe",
@@ -27,30 +26,29 @@ const projects = [
   },
 ];
 
-export default function Projects({
-  titleLarge = false,
-}: {
+interface Props {
   titleLarge?: boolean;
-}) {
-  return (
-    <div>
-      <h2 className={`font-medium ${titleLarge ? "text-2xl" : "text-xl"}`}>
-        Projects
-      </h2>
-      <div className="mt-8 flex flex-col gap-1">
-        {projects.map((project) => (
-          <Link
-            href={project.href}
-            key={project.name}
-            className="flex flex-col gap-1 rounded-xl p-4 transition hover:bg-neutral-100 dark:hover:bg-neutral-900"
-          >
-            <h3 className="font-medium">{project.name}</h3>
-            <p className="text-neutral-600 dark:text-neutral-400">
-              {project.description}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
 }
+
+const { titleLarge = false } = Astro.props;
+---
+
+<div>
+  <h2 class={`font-medium ${titleLarge ? "text-2xl" : "text-xl"}`}>Projects</h2>
+  <div class="mt-8 flex flex-col gap-1">
+    {
+      projects.map((project) => (
+        <a
+          href={project.href}
+          class="flex flex-col gap-1 rounded-xl p-4 transition hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          aria-label={project.name}
+        >
+          <h3 class="font-medium">{project.name}</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            {project.description}
+          </p>
+        </a>
+      ))
+    }
+  </div>
+</div>

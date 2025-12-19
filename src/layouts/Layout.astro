@@ -1,0 +1,88 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { SEO } from "astro-seo";
+import Header from "../components/Header.astro";
+import "../global.css";
+
+// Supports weights 100-900
+import "@fontsource/inter/100.css";
+import "@fontsource/inter/200.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ammar Elbehery | Full-stack web developer",
+  description = "Ammar Elbehery - Full-stack web developer",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class="overflow-auto">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL.toString()}
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image: new URL("/images/hero.png", Astro.site).toString(),
+        },
+        optional: {
+          description: description,
+          siteName: "Ammar Elbehery",
+          locale: "en_US",
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: title,
+        image: new URL("/images/hero.png", Astro.site).toString(),
+        imageAlt: "Ammar Elbehery",
+        description: description,
+      }}
+      extend={{
+        link: [
+          { rel: "icon", href: "/favicon.ico" },
+          { rel: "icon", href: "/images/hero.png" },
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width" },
+          { name: "generator", content: Astro.generator },
+          {
+            name: "keywords",
+            content:
+              "Ammar Elbehery, Ammar, Elbehery, web developer, full-stack, full-stack web developer, software engineer, software developer, web development, software development, react",
+          },
+        ],
+      }}
+    />
+    <ClientRouter />
+  </head>
+  <body
+    class="flex min-h-screen flex-col bg-neutral-50 text-neutral-950 antialiased [scrollbar-gutter:stable] dark:bg-neutral-950 dark:text-neutral-50 font-sans"
+  >
+    <Header />
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: "Inter", sans-serif;
+  }
+</style>
