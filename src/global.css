@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: var(--font-garamond);
+}
+
+:root {
+  scrollbar-gutter: stable;
+}
+@media (width >= 40rem) {
+  :root {
+    font-size: 20px;
+  }
+}
+
+h1 {
+  @apply mt-30 mb-10 text-3xl font-semibold;
+}
+
+h2 {
+  @apply text-lg font-semibold;
+}
+
+h3 {
+  @apply text-base font-semibold;
+}
+
+section {
+  @apply flex flex-col gap-2;
+}
+
+ul {
+  @apply list-inside list-decimal;
+}
+
+a[target="_blank"] {
+  @apply w-fit font-medium text-red-700 hover:text-red-800;
+}
+
+blockquote {
+  @apply mb-4 border-l-4 border-neutral-300 pl-4 italic;
+}
+
+abbr {
+  @apply cursor-help;
+}
+
+figure > img {
+  @apply w-full;
+}
+
+figcaption {
+  @apply mt-1 text-center text-sm;
+}

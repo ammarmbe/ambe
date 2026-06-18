@@ -1,0 +1,36 @@
+---
+import { cn } from "../utils";
+
+const pages = [
+  { value: "/", label: "Home", absolute: true },
+  { value: "/projects", label: "Projects" },
+  { value: "mailto:ammarelbehery04@gmail.com", label: "Contact" },
+];
+---
+
+<header class="flex flex-wrap items-center justify-between gap-4">
+  <nav class="flex items-center gap-4">
+    {
+      pages.map((page) => (
+        <a
+          href={page.value}
+          class={cn(
+            "text-lg font-medium hover:text-red-800",
+            (
+              page.absolute
+                ? Astro.url.pathname === page.value
+                : Astro.url.pathname.startsWith(page.value)
+            )
+              ? "text-red-700 italic"
+              : undefined,
+          )}
+        >
+          {page.label}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="flex grow items-center justify-end">
+    <img src="/title.svg" class="w-30" />
+  </div>
+</header>

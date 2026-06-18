@@ -1,0 +1,142 @@
+---
+import Details from "../../components/details.astro";
+import Layout from "../../layout.astro";
+---
+
+<Layout title="CuraFlow - Ammar Elbehery">
+  <h1>CuraFlow</h1>
+
+  <Details
+    items={[
+      { label: "Tech stack", value: "React, Electron, and PostgreSQL" },
+      { label: "Duration", value: "July 2023 – January 2024" },
+      { label: "Project type", value: "Client" },
+      { label: "Demo", value: "View app", url: "https://curaflow.ambe.dev/" },
+    ]}
+  />
+
+  <div class="flex flex-col gap-6">
+    <section>
+      <p>
+        CuraFlow is a comprehensive clinic management system designed to
+        streamline operations for clinics. It includes modules for employee
+        management, patient tracking, doctor services, and appointment
+        scheduling. Additionally, CuraFlow provides advanced analytics for
+        administrators and integrates a <abbr title="Role-based access control"
+          >RBAC</abbr
+        > system for secure employee management. The system was developed for a client
+        who needed a custom solution that exceeded the capabilities of existing clinic
+        management tools.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>
+        The client clinic was managing their operations using a combination of
+        pen-and-paper and Excel spreadsheets, a process that was inefficient and
+        error-prone. They required a robust digital solution that could manage
+        all aspects of their clinic, from patient records and appointments to
+        employee and doctor management. Existing market solutions either lacked
+        the features they needed or were not flexible enough to suit their
+        specific workflow. This gap led them to request a custom solution
+        tailored to their exact requirements.
+      </p>
+    </section>
+
+    <section>
+      <h2>Goals and Objectives</h2>
+      <h3>Primary Goal</h3>
+      <p>
+        To create an all-in-one clinic management system that eliminates the
+        need for multiple systems, supports doctor, admin, and employee
+        interfaces, and modernizes the clinic’s operations.
+      </p>
+      <h3>Additional Objectives</h3>
+      <ul>
+        <li>
+          Make the system fully remote with <abbr title="Over-the-air">OTA</abbr
+          > update capabilities.
+        </li>
+        <li>
+          Ensure the system is flexible enough to handle various custom
+          requirements, such as patient discount packages and complex
+          appointment scheduling.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Development Process</h2>
+      <p>
+        The development started by researching alternative solutions the client
+        had tried, focusing on identifying their pain points. From there, the
+        project began with the database schema design, ensuring that all aspects
+        of the system were covered.
+      </p>
+      <p>
+        Once the schema was complete, multiple iterations of UI and UX design
+        followed to align with the client’s workflow and preferences. After
+        finalizing the design, the implementation phase began, focusing on the
+        application’s routes, logic, and API.
+      </p>
+      <p>
+        Since it was a two-person team (with <a
+          href="https://github.com/ItsXrgon"
+          target="_blank">Ali Koheil</a
+        >), no formal development methodology was followed, but the work was
+        highly collaborative, ensuring that each part of the system addressed
+        the client’s needs.
+      </p>
+    </section>
+
+    <figure>
+      <img
+        src="/curaflow-en-hero.png"
+        alt="Final design of the CuraFlow application"
+      />
+      <figcaption>Final design of the CuraFlow application</figcaption>
+    </figure>
+
+    <section>
+      <h2>Results</h2>
+      <p>
+        CuraFlow succeeded in modernizing the clinic’s operations, automating
+        many tasks that were previously manual. The client now has a system that
+        efficiently manages appointments, payments, and much more, all tailored
+        to their specific workflow.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Features</h2>
+      Some of the most notable features of CuraFlow include:
+
+      <ul>
+        <li>
+          <span class="font-semibold">Appointment scheduling:</span> An intelligent
+          system that prevents appointment conflicts and ensures accurate tracking
+          of patient visits.
+        </li>
+        <li>
+          <span class="font-semibold">Medical forms:</span> Interactive graphs displaying
+          progress in medical forms, allowing doctors to visualize changes over time.
+        </li>
+        <li>
+          <span class="font-semibold">Payment management:</span> A flexible payment
+          handling system that tracks both what doctors owe and what they should receive,
+          considering percentages and past payments.
+        </li>
+        <li>
+          <span class="font-semibold">Full RBAC system:</span> Role-based access control
+          to ensure that employees only have access to the features necessary for
+          their job role.
+        </li>
+        <li>
+          <span class="font-semibold">OTA updates:</span> The system is remotely updated,
+          ensuring that clinics always have the latest version without manual intervention.
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from "../layout.astro";
+---
+
+<Layout title="Ammar Elbehery">
+  <div class="mt-2 flex flex-col gap-10">
+    <p>
+      Hello, I’m Ammar Elbehery, a <abbr title="Business Intelligence">BI</abbr> student
+      and full-stack web developer. I use React, TypeScript, and SQL to build user-centric
+      web apps with clean code and functional design.
+    </p>
+
+    <section>
+      <h2>Links</h2>
+      <div class="flex items-center gap-4">
+        <a href="mailto:ammarelbehery04@gmail.com" target="_blank">Email</a>
+        <a href="https://github.com/ammarmbe" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/ammarmbe" target="_blank">LinkedIn</a>
+        <a href="/resume.pdf" target="_blank">Resume</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured projects</h2>
+
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a href="/projects/vibe" class="group flex flex-col">
+          <h3 class="text-lg font-medium group-hover:text-red-800">Vibe</h3>
+          <p>Social media web app</p>
+        </a>
+        <a href="/projects/curaflow" class="group flex flex-col">
+          <h3 class="text-lg font-medium group-hover:text-red-800">CuraFlow</h3>
+          <p>Clinic management system</p>
+        </a>
+        <a href="/projects/tagged" class="group flex flex-col">
+          <h3 class="text-lg font-medium group-hover:text-red-800">Tagged</h3>
+          <p>E-commerce platform</p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="flex items-center gap-3">
+        React, TypeScript, Next.js, PostgreSQL, and Python.
+      </div>
+    </section>
+  </div>
+</Layout>

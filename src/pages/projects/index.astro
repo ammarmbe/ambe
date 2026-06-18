@@ -1,0 +1,44 @@
+---
+import Layout from "../../layout.astro";
+
+const projects = [
+  {
+    url: "/projects/vibe",
+    title: "Vibe, social media web app",
+    description:
+      "Social media web app built as the final project for CS50. Built with React and Next.js, it includes features like Google OAuth, post reactions, user mentions, and PWA push notifications.",
+  },
+  {
+    url: "/projects/curaflow",
+    title: "CuraFlow, clinic management system",
+    description:
+      "Clinic management system with multiple modules, including appointments, employee management, medical forms, and patient tracking. Developed for Windows, macOS, and web.",
+  },
+  {
+    url: "/projects/tagged",
+    title: "Tagged, e-commerce platform",
+    description:
+      "Clothing e-commerce platform featuring inventory and order management, detailed analytics, and automated email notifications. It was designed and built using Untitled UI and TailwindCSS.",
+  },
+  {
+    url: "https://github.com/ammarmbe/tally",
+    title: "Tally, attendance tracker",
+    description:
+      "Attendance tracking web app that allows students to log their attendance, receive notifications before classes, and track their percentages. Built with Next.js and PostgreSQL.",
+  },
+];
+---
+
+<Layout title="Projects - Ammar Elbehery">
+  <h1>Projects</h1>
+  {
+    projects.map((project) => (
+      <a href={project.url} class="group flex flex-col gap-2">
+        <h2 class="text-lg font-medium group-hover:text-red-800">
+          {project.title}
+        </h2>
+        <p>{project.description}</p>
+      </a>
+    ))
+  }
+</Layout>
